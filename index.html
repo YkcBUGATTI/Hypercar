@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HYPERCAR · 传奇之家</title>
+<meta name="description" content="超级跑车纪实的家园:Bugatti Tourbillon、Ferrari F80,与更多即将加入的传奇。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HYPERCAR · 传奇之家">
+<meta property="og:description" content="超级跑车纪实的家园 —— Bugatti Tourbillon · Ferrari F80,与更多传奇。">
+<meta property="og:image" content="assets/f80.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+/* 自动语言:海外访客自动进入英文版;用户主动选择过中文则不跳转 */
+(function () {
+  if (localStorage.getItem('hypercar-lang') === 'zh') return;
+  window.hcLangCheck = function (d) {
+    if (d && d.country_code && d.country_code !== 'CN') {
+      localStorage.setItem('hypercar-lang', 'en');
+      location.replace('en.html');
+    }
+  };
+  var s = document.createElement('script');
+  s.src = 'https://ipapi.co/json/?callback=hcLangCheck';
+  s.onerror = function () {};
+  document.head.appendChild(s);
+})();
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"><span></span></div>
+
+<header class="nav">
+  <span class="nav__brand">HYPERCAR<span class="nav__dot">.</span>SITE</span>
+  <a class="lang-btn mono" href="en.html" onclick="localStorage.setItem('hypercar-lang','en')">EN</a>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <p class="hero__kicker mono">SELECT YOUR LEGEND</p>
+  <h1 class="hero__title">HYPERCAR</h1>
+  <p class="hero__sub">传奇,由此进入</p>
+  <div class="hero__line" aria-hidden="true"></div>
+</section>
+
+<!-- ============ 01 TOURBILLON ============ -->
+<a class="door door--bugatti" href="https://tourbillon.hypercar.site" target="_blank" rel="noopener">
+  <div class="door__media">
+    <video class="door__video" src="assets/videos/tourbillon.mp4" muted loop playsinline autoplay
+           poster="assets/tourbillon.webp"></video>
+  </div>
+  <div class="door__body">
+    <span class="door__no mono">01</span>
+    <div class="door__content">
+      <span class="door__tag mono">BUGATTI · 2024</span>
+      <h2 class="door__title">TOURBILLON</h2>
+      <p class="door__sub">Pour l'éternité · 为永恒而生</p>
+      <p class="door__desc">8.3 升自然吸气 V16 与三电机混动,1,800 马力,限量 250 台。一台以陀飞轮命名的车,值得 115 年的等待。</p>
+      <div class="door__specs mono">
+        <span><b data-count="1800">0</b> hp</span>
+        <span><b data-count="445">0</b> km/h</span>
+        <span><b data-count="250">0</b> 台</span>
+      </div>
+      <span class="door__enter mono">进入 TOURBILLON →</span>
+    </div>
+  </div>
+</a>
+
+<!-- ============ 02 F80 ============ -->
+<a class="door door--ferrari" href="https://f80.hypercar.site" target="_blank" rel="noopener">
+  <div class="door__media">
+    <video class="door__video" src="assets/videos/f80.mp4" muted loop playsinline autoplay
+           poster="assets/f80.webp"></video>
+  </div>
+  <div class="door__body">
+    <span class="door__no mono">02</span>
+    <div class="door__content">
+      <span class="door__tag mono">FERRARI · 2024</span>
+      <h2 class="door__title">F80</h2>
+      <p class="door__sub">跃马的全新超级跑车</p>
+      <p class="door__desc">120° V6 与三电机混动,1,200 马力,限量 799 台。继 GTO、F40、LaFerrari 之后的传奇新篇。</p>
+      <div class="door__specs mono">
+        <span><b data-count="1200">0</b> hp</span>
+        <span><b data-count="350">0</b> km/h</span>
+        <span><b data-count="799">0</b> 台</span>
+      </div>
+      <span class="door__enter mono">进入 F80 →</span>
+    </div>
+  </div>
+</a>
+
+</main>
+
+<footer class="footer">
+  <p class="footer__note">本站为爱好者制作的门户页,Bugatti、Ferrari 及相关商标、图片、视频版权归各自品牌所有。内容以官方发布为准。</p>
+  <p class="footer__links mono">
+    <a href="https://tourbillon.hypercar.site">tourbillon.hypercar.site</a>
+    <a href="https://f80.hypercar.site">f80.hypercar.site</a>
+  </p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
