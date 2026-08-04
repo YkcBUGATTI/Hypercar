@@ -38,7 +38,7 @@
     });
   }
 
-  /* 卡片入场(左右对进) */
+  /* 卡片入场(下方上浮) */
   var doors = document.querySelectorAll('.door');
   var doorIO = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
@@ -47,7 +47,7 @@
         doorIO.unobserve(en.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.18 });
   doors.forEach(function (d) { doorIO.observe(d); });
 
   /* 数字滚动 */
@@ -73,19 +73,4 @@
     });
   }, { threshold: 0.35 });
   doors.forEach(function (d) { numIO.observe(d); });
-
-  /* 视频:视口播放(自动播放失败的兜底) */
-  var vidIO = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      var v = en.target.querySelector('.door__video');
-      if (!v) return;
-      if (en.isIntersecting) {
-        var p = v.play();
-        if (p && p.catch) p.catch(function () {});
-      } else {
-        v.pause();
-      }
-    });
-  }, { threshold: 0.25 });
-  doors.forEach(function (d) { vidIO.observe(d); });
 })();

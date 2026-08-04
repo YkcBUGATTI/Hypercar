@@ -1,6 +1,6 @@
 /* ============================================================
    HYPERCAR.SITE · 门户页
-   风格参照子站:深色 · 400 字重大标题 · mono 标签 · 编号卡列表
+   风格参照子站:深色 · 400 字重大标题 · mono 标签 · 三列网格卡
    ============================================================ */
 
 :root {
@@ -14,6 +14,7 @@
   --faint: #7d7d88;
   --bugatti: #004bfa;
   --ferrari: #dc0000;
+  --yangwang: #c9a24b;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
   --ease: cubic-bezier(0.65, 0, 0.35, 1);
@@ -98,13 +99,13 @@ a { color: inherit; text-decoration: none; }
 
 /* HERO */
 .hero {
-  min-height: 56vh;
+  min-height: 52vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 140px 24px 60px;
+  padding: 140px 24px 48px;
   position: relative;
 }
 .hero::before {
@@ -113,8 +114,9 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   background:
     radial-gradient(46% 80% at 50% 20%, rgba(255, 255, 255, 0.03), transparent 70%),
-    radial-gradient(26% 60% at 20% 65%, rgba(0, 75, 250, 0.08), transparent 70%),
-    radial-gradient(26% 60% at 80% 65%, rgba(220, 0, 0, 0.08), transparent 70%);
+    radial-gradient(26% 60% at 18% 65%, rgba(0, 75, 250, 0.08), transparent 70%),
+    radial-gradient(26% 60% at 82% 65%, rgba(220, 0, 0, 0.08), transparent 70%),
+    radial-gradient(26% 60% at 50% 85%, rgba(201, 162, 75, 0.06), transparent 70%);
   pointer-events: none;
 }
 .hero__kicker {
@@ -145,9 +147,9 @@ a { color: inherit; text-decoration: none; }
 }
 .hero__line {
   margin-top: 40px;
-  width: 120px;
+  width: 140px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--bugatti), var(--ferrari), transparent);
+  background: linear-gradient(90deg, transparent, var(--bugatti), var(--ferrari), var(--yangwang), transparent);
   opacity: 0;
   animation: fadeUp 1s var(--ease2) 0.8s forwards, linePulse 3.6s ease-in-out 1.8s infinite;
 }
@@ -157,68 +159,75 @@ a { color: inherit; text-decoration: none; }
 }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
-/* 入口卡列表 */
+/* 车型入口:三列网格 */
 .doors {
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 10px 28px 80px;
+  padding: 8px 28px 88px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
 }
 .door {
   position: relative;
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: clamp(28px, 4vw, 56px);
-  align-items: center;
-  margin: 0 0 40px;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   background: linear-gradient(180deg, var(--panel), rgba(10, 11, 15, 0.6));
-  border-radius: 4px;
+  border-radius: 6px;
+  overflow: hidden;
   transition: transform 0.5s var(--ease), border-color 0.4s, box-shadow 0.5s;
   opacity: 0;
+  transform: translateY(36px);
 }
-.door--bugatti { transform: translateX(-52px); }
-.door--ferrari { transform: translateX(52px); }
 .door.is-in { opacity: 1; transform: none; }
-.door:hover { transform: translateY(-6px); }
-.door--bugatti:hover { border-color: rgba(0, 75, 250, 0.55); box-shadow: 0 0 0 1px rgba(0, 75, 250, 0.3), 0 26px 60px -24px rgba(0, 75, 250, 0.4); }
-.door--ferrari:hover { border-color: rgba(220, 0, 0, 0.55); box-shadow: 0 0 0 1px rgba(220, 0, 0, 0.3), 0 26px 60px -24px rgba(220, 0, 0, 0.4); }
+.door:hover { transform: translateY(-8px); }
+
+.door--bugatti:hover { border-color: rgba(0, 75, 250, 0.6); box-shadow: 0 0 0 1px rgba(0, 75, 250, 0.3), 0 30px 60px -26px rgba(0, 75, 250, 0.45); }
+.door--ferrari:hover { border-color: rgba(220, 0, 0, 0.6); box-shadow: 0 0 0 1px rgba(220, 0, 0, 0.3), 0 30px 60px -26px rgba(220, 0, 0, 0.45); }
+.door--yangwang:hover { border-color: rgba(201, 162, 75, 0.6); box-shadow: 0 0 0 1px rgba(201, 162, 75, 0.3), 0 30px 60px -26px rgba(201, 162, 75, 0.4); }
 
 .door__media {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 2px;
+  border-bottom: 1px solid var(--line);
 }
-.door__video {
+.door__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.88);
+  filter: saturate(0.85) brightness(0.92);
   transition: transform 1s var(--ease2), filter 0.8s;
 }
-.door:hover .door__video { transform: scale(1.04); filter: saturate(1); }
-
-.door__body {
-  position: relative;
-  padding-left: 26px;
-  border-left: 2px solid var(--line2);
-}
-.door--bugatti .door__body { border-left-color: rgba(0, 75, 250, 0.6); }
-.door--ferrari .door__body { border-left-color: rgba(220, 0, 0, 0.6); }
+.door:hover .door__img { transform: scale(1.05); filter: saturate(1) brightness(1); }
 
 .door__no {
   position: absolute;
-  top: -6px;
-  left: 0;
-  font-size: clamp(56px, 6vw, 84px);
+  top: 12px;
+  left: 14px;
+  font-size: clamp(40px, 4vw, 56px);
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.28);
   pointer-events: none;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
 }
-.door--bugatti .door__no { -webkit-text-stroke-color: rgba(0, 75, 250, 0.25); }
-.door--ferrari .door__no { -webkit-text-stroke-color: rgba(220, 0, 0, 0.25); }
+.door--bugatti .door__no { -webkit-text-stroke-color: rgba(0, 75, 250, 0.55); }
+.door--ferrari .door__no { -webkit-text-stroke-color: rgba(220, 0, 0, 0.55); }
+.door--yangwang .door__no { -webkit-text-stroke-color: rgba(201, 162, 75, 0.55); }
+
+.door__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 26px 26px 28px;
+}
+.door--bugatti .door__body { border-top: 2px solid rgba(0, 75, 250, 0.5); }
+.door--ferrari .door__body { border-top: 2px solid rgba(220, 0, 0, 0.5); }
+.door--yangwang .door__body { border-top: 2px solid rgba(201, 162, 75, 0.5); }
 
 .door__tag {
   font-size: 11px;
@@ -227,52 +236,51 @@ a { color: inherit; text-decoration: none; }
 }
 .door--bugatti .door__tag { color: #5b86ff; }
 .door--ferrari .door__tag { color: #ff5a50; }
+.door--yangwang .door__tag { color: #d8b96a; }
 .door__title {
   font-weight: 400;
-  font-size: clamp(34px, 4vw, 52px);
+  font-size: clamp(30px, 2.6vw, 40px);
   letter-spacing: 0.04em;
   margin: 10px 0 8px;
   line-height: 1.05;
 }
 .door__sub {
-  font-size: 14px;
-  letter-spacing: 0.2em;
+  font-size: 13.5px;
+  letter-spacing: 0.18em;
   color: var(--dim);
-  margin-bottom: 16px;
-}
-.door__desc {
-  font-size: 14.5px;
-  line-height: 1.9;
-  color: var(--dim);
-  margin-bottom: 22px;
-  max-width: 440px;
+  margin-bottom: 18px;
 }
 .door__specs {
   display: flex;
-  gap: 34px;
-  margin-bottom: 24px;
-  padding-top: 20px;
+  gap: 22px;
+  margin-top: auto;
+  padding-top: 18px;
   border-top: 1px solid var(--line);
 }
-.door__specs span { color: var(--faint); font-size: 12px; letter-spacing: 0.14em; }
+.door__specs span { color: var(--faint); font-size: 11.5px; letter-spacing: 0.14em; }
 .door__specs b {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 400;
   color: #fff;
-  margin-right: 5px;
+  margin-right: 4px;
 }
 .door--bugatti .door__specs b { color: #9db8ff; }
 .door--ferrari .door__specs b { color: #ff8a80; }
+.door--yangwang .door__specs b { color: #e2c98c; }
+
 .door__enter {
+  margin-top: 20px;
   font-size: 12px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
   color: var(--dim);
   border-bottom: 1px solid transparent;
   padding-bottom: 4px;
+  align-self: flex-start;
   transition: color 0.3s, border-color 0.3s;
 }
 .door--bugatti:hover .door__enter { color: var(--bugatti); border-color: var(--bugatti); }
 .door--ferrari:hover .door__enter { color: var(--ferrari); border-color: var(--ferrari); }
+.door--yangwang:hover .door__enter { color: var(--yangwang); border-color: var(--yangwang); }
 
 /* 页脚 */
 .footer {
@@ -280,7 +288,7 @@ a { color: inherit; text-decoration: none; }
   padding: 36px 28px 44px;
   text-align: center;
 }
-.footer__note { font-size: 12px; color: var(--faint); max-width: 660px; margin: 0 auto 18px; line-height: 1.8; }
+.footer__note { font-size: 12px; color: var(--faint); max-width: 680px; margin: 0 auto 18px; line-height: 1.8; }
 .footer__links { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
 .footer__links a {
   font-size: 11.5px;
@@ -291,18 +299,19 @@ a { color: inherit; text-decoration: none; }
 .footer__links a:hover { color: var(--txt); }
 
 /* 响应式 */
-@media (max-width: 900px) {
-  .door { grid-template-columns: 1fr; padding: 20px; }
-  .door__body { padding-left: 0; border-left: none; padding-top: 22px; border-top: 2px solid var(--line2); }
-  .door--bugatti, .door--ferrari { transform: translateY(40px); }
+@media (max-width: 1020px) {
+  .doors { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  .doors { grid-template-columns: 1fr; padding: 0 16px 56px; gap: 20px; }
+  .door__title { font-size: 32px; }
+  .door__specs { gap: 18px; }
+  .door__specs b { font-size: 24px; }
+  .nav { padding: 16px 18px; }
+  .hero { padding-top: 110px; min-height: 48vh; }
 }
 @media (max-width: 480px) {
-  .nav { padding: 16px 18px; }
-  .doors { padding: 0 14px 56px; }
-  .door { margin-bottom: 26px; }
-  .door__specs { gap: 20px; }
-  .door__specs b { font-size: 24px; }
-  .hero { padding-top: 110px; }
+  .door__body { padding: 20px 18px 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
