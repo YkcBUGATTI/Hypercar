@@ -1,5 +1,6 @@
 /* ============================================================
-   HYPERCAR.SITE · 交互
+   HYPERCAR.SITE · v3 交互
+   导航实底 / 光标 / 卡片左右入场 / 数字滚动 / 滚动指示
    ============================================================ */
 (function () {
   'use strict';
@@ -9,12 +10,14 @@
 
   /* 导航底色 */
   var nav = document.querySelector('.nav');
-  window.addEventListener('scroll', function () {
+  var onScroll = function () {
     if (window.pageYOffset > 40) nav.classList.add('is-solid');
     else nav.classList.remove('is-solid');
-  }, { passive: true });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  /* 光标 */
+  /* 自定义光标 */
   var cursor = document.querySelector('.cursor');
   if (cursor && !coarse && !reduced) {
     var cx = -100, cy = -100, tx = -100, ty = -100, raf = null;
@@ -38,7 +41,7 @@
     });
   }
 
-  /* 卡片入场(下方上浮) */
+  /* 卡片入场(交替左右滑入) */
   var doors = document.querySelectorAll('.door');
   var doorIO = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
@@ -47,7 +50,7 @@
         doorIO.unobserve(en.target);
       }
     });
-  }, { threshold: 0.18 });
+  }, { threshold: 0.15 });
   doors.forEach(function (d) { doorIO.observe(d); });
 
   /* 数字滚动 */
@@ -73,4 +76,28 @@
     });
   }, { threshold: 0.35 });
   doors.forEach(function (d) { numIO.observe(d); });
+
+  /* 首屏兜底:加载后立即为视口内的卡片触发入场与数字滚动
+     (保证首屏卡片不依赖 IntersectionObserver 的首帧时机) */
+  function revealInViewport() {
+    doors.forEach(function (d) {
+      if (d.classList.contains('is-in')) return;
+      var r = d.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        d.classList.add('is-in');
+        d.querySelectorAll('[data-count]').forEach(animateNum);
+        doorIO.unobserve(d);
+        numIO.unobserve(d);
+      }
+    });
+  }
+  window.addEventListener('load', function () { setTimeout(revealInViewport, 150); });
+
+  /* 滚动指示淡出 */
+  var scrollHint = document.querySelector('.hero__scroll');
+  if (scrollHint) {
+    window.addEventListener('scroll', function () {
+      scrollHint.classList.toggle('is-gone', window.pageYOffset > 60);
+    }, { passive: true });
+  }
 })();
