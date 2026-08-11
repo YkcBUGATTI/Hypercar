@@ -12,12 +12,10 @@
 <meta property="og:image" content="assets/tourbillon.webp">
 <meta name="twitter:card" content="summary_large_image">
 <script>
-/* 自动语言:海外访客自动进入英文版;用户主动选择过中文则不跳转 */
+/* 自动语言:每次加载按 IP 分流——IP 不在中国则进入英文版 */
 (function () {
-  if (localStorage.getItem('hypercar-lang') === 'zh') return;
   window.hcLangCheck = function (d) {
     if (d && d.country_code && d.country_code !== 'CN') {
-      localStorage.setItem('hypercar-lang', 'en');
       location.replace('en.html');
     }
   };
@@ -35,7 +33,7 @@
 
 <header class="nav">
   <a class="nav__brand" href="#hero">HYPERCAR<span class="nav__dot">.</span>SITE</a>
-  <a class="lang-btn" href="en.html" onclick="localStorage.setItem('hypercar-lang','en')">EN</a>
+  <a class="lang-btn" href="en.html">EN</a>
 </header>
 
 <main>
