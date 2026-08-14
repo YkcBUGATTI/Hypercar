@@ -306,6 +306,7 @@ main {
 .door--bolide.is-in:hover { border-color: rgba(198, 208, 218, 0.55); box-shadow: 0 34px 70px -34px rgba(198, 208, 218, 0.4); }
 .door--divo.is-in:hover { border-color: rgba(0, 178, 169, 0.55); box-shadow: 0 34px 70px -34px rgba(0, 178, 169, 0.45); }
 .door--destrier.is-in:hover { border-color: rgba(154, 92, 255, 0.55); box-shadow: 0 34px 70px -34px rgba(154, 92, 255, 0.45); }
+.door--chiron.is-in:hover { border-color: rgba(255, 122, 0, 0.55); box-shadow: 0 34px 70px -34px rgba(255, 122, 0, 0.45); }
 
 .door__media {
   position: relative;
@@ -342,6 +343,7 @@ main {
 .door--bolide .door__no { -webkit-text-stroke-color: rgba(198, 208, 218, 0.7); }
 .door--divo .door__no { -webkit-text-stroke-color: rgba(0, 178, 169, 0.7); }
 .door--destrier .door__no { -webkit-text-stroke-color: rgba(154, 92, 255, 0.7); }
+.door--chiron .door__no { -webkit-text-stroke-color: rgba(255, 122, 0, 0.7); }
 
 .door__body {
   display: flex;
@@ -355,6 +357,7 @@ main {
 .door--bolide .door__body { border-top-color: rgba(198, 208, 218, 0.35); }
 .door--divo .door__body { border-top-color: rgba(0, 178, 169, 0.35); }
 .door--destrier .door__body { border-top-color: rgba(154, 92, 255, 0.35); }
+.door--chiron .door__body { border-top-color: rgba(255, 122, 0, 0.35); }
 
 .door__tag {
   font-family: var(--mono);
@@ -368,6 +371,7 @@ main {
 .door--bolide .door__tag { color: #b6c2cc; }
 .door--divo .door__tag { color: #34cfc2; }
 .door--destrier .door__tag { color: #b48cff; }
+.door--chiron .door__tag { color: #ffa04d; }
 
 .door__title {
   font-family: var(--display);
@@ -427,6 +431,7 @@ main {
 .door--bolide .spec b { color: #d7dfe6; }
 .door--divo .spec b { color: #5fe3d8; }
 .door--destrier .spec b { color: #c9a8ff; }
+.door--chiron .spec b { color: #ffb36e; }
 
 .door__enter {
   margin-top: 14px;
@@ -451,6 +456,7 @@ main {
 .door--bolide.is-in:hover .door__enter { color: #c9d3dc; border-color: #c9d3dc; }
 .door--divo.is-in:hover .door__enter { color: #3ad6c9; border-color: #3ad6c9; }
 .door--destrier.is-in:hover .door__enter { color: #b78eff; border-color: #b78eff; }
+.door--chiron.is-in:hover .door__enter { color: #ff9d40; border-color: #ff9d40; }
 
 /* ---------- 页脚 ---------- */
 .footer {
