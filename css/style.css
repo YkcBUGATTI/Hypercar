@@ -307,6 +307,8 @@ main {
 .door--divo.is-in:hover { border-color: rgba(0, 178, 169, 0.55); box-shadow: 0 34px 70px -34px rgba(0, 178, 169, 0.45); }
 .door--destrier.is-in:hover { border-color: rgba(154, 92, 255, 0.55); box-shadow: 0 34px 70px -34px rgba(154, 92, 255, 0.45); }
 .door--chiron.is-in:hover { border-color: rgba(255, 122, 0, 0.55); box-shadow: 0 34px 70px -34px rgba(255, 122, 0, 0.45); }
+.door--veyron.is-in:hover { border-color: rgba(235, 225, 200, 0.55); box-shadow: 0 34px 70px -34px rgba(235, 225, 200, 0.4); }
+.door--mistral.is-in:hover { border-color: rgba(74, 190, 120, 0.55); box-shadow: 0 34px 70px -34px rgba(74, 190, 120, 0.45); }
 
 .door__media {
   position: relative;
@@ -344,6 +346,8 @@ main {
 .door--divo .door__no { -webkit-text-stroke-color: rgba(0, 178, 169, 0.7); }
 .door--destrier .door__no { -webkit-text-stroke-color: rgba(154, 92, 255, 0.7); }
 .door--chiron .door__no { -webkit-text-stroke-color: rgba(255, 122, 0, 0.7); }
+.door--veyron .door__no { -webkit-text-stroke-color: rgba(235, 225, 200, 0.7); }
+.door--mistral .door__no { -webkit-text-stroke-color: rgba(74, 190, 120, 0.7); }
 
 .door__body {
   display: flex;
@@ -358,6 +362,8 @@ main {
 .door--divo .door__body { border-top-color: rgba(0, 178, 169, 0.35); }
 .door--destrier .door__body { border-top-color: rgba(154, 92, 255, 0.35); }
 .door--chiron .door__body { border-top-color: rgba(255, 122, 0, 0.35); }
+.door--veyron .door__body { border-top-color: rgba(235, 225, 200, 0.35); }
+.door--mistral .door__body { border-top-color: rgba(74, 190, 120, 0.35); }
 
 .door__tag {
   font-family: var(--mono);
@@ -372,6 +378,8 @@ main {
 .door--divo .door__tag { color: #34cfc2; }
 .door--destrier .door__tag { color: #b48cff; }
 .door--chiron .door__tag { color: #ffa04d; }
+.door--veyron .door__tag { color: #e6d9b8; }
+.door--mistral .door__tag { color: #55cf85; }
 
 .door__title {
   font-family: var(--display);
@@ -432,6 +440,8 @@ main {
 .door--divo .spec b { color: #5fe3d8; }
 .door--destrier .spec b { color: #c9a8ff; }
 .door--chiron .spec b { color: #ffb36e; }
+.door--veyron .spec b { color: #efe6cd; }
+.door--mistral .spec b { color: #7bdd9f; }
 
 .door__enter {
   margin-top: 14px;
@@ -457,6 +467,8 @@ main {
 .door--divo.is-in:hover .door__enter { color: #3ad6c9; border-color: #3ad6c9; }
 .door--destrier.is-in:hover .door__enter { color: #b78eff; border-color: #b78eff; }
 .door--chiron.is-in:hover .door__enter { color: #ff9d40; border-color: #ff9d40; }
+.door--veyron.is-in:hover .door__enter { color: #e9dcba; border-color: #e9dcba; }
+.door--mistral.is-in:hover .door__enter { color: #5fd48d; border-color: #5fd48d; }
 
 /* ---------- 页脚 ---------- */
 .footer {
