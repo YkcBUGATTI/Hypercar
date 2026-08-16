@@ -309,6 +309,9 @@ main {
 .door--chiron.is-in:hover { border-color: rgba(255, 122, 0, 0.55); box-shadow: 0 34px 70px -34px rgba(255, 122, 0, 0.45); }
 .door--veyron.is-in:hover { border-color: rgba(235, 225, 200, 0.55); box-shadow: 0 34px 70px -34px rgba(235, 225, 200, 0.4); }
 .door--mistral.is-in:hover { border-color: rgba(74, 190, 120, 0.55); box-shadow: 0 34px 70px -34px rgba(74, 190, 120, 0.45); }
+.door--f499p.is-in:hover { border-color: rgba(245, 196, 0, 0.55); box-shadow: 0 34px 70px -34px rgba(245, 196, 0, 0.45); }
+.door--valkyrie.is-in:hover { border-color: rgba(38, 145, 85, 0.55); box-shadow: 0 34px 70px -34px rgba(38, 145, 85, 0.45); }
+.door--nevera.is-in:hover { border-color: rgba(64, 180, 255, 0.55); box-shadow: 0 34px 70px -34px rgba(64, 180, 255, 0.45); }
 
 .door__media {
   position: relative;
@@ -348,6 +351,9 @@ main {
 .door--chiron .door__no { -webkit-text-stroke-color: rgba(255, 122, 0, 0.7); }
 .door--veyron .door__no { -webkit-text-stroke-color: rgba(235, 225, 200, 0.7); }
 .door--mistral .door__no { -webkit-text-stroke-color: rgba(74, 190, 120, 0.7); }
+.door--f499p .door__no { -webkit-text-stroke-color: rgba(245, 196, 0, 0.7); }
+.door--valkyrie .door__no { -webkit-text-stroke-color: rgba(38, 145, 85, 0.7); }
+.door--nevera .door__no { -webkit-text-stroke-color: rgba(64, 180, 255, 0.7); }
 
 .door__body {
   display: flex;
@@ -364,6 +370,9 @@ main {
 .door--chiron .door__body { border-top-color: rgba(255, 122, 0, 0.35); }
 .door--veyron .door__body { border-top-color: rgba(235, 225, 200, 0.35); }
 .door--mistral .door__body { border-top-color: rgba(74, 190, 120, 0.35); }
+.door--f499p .door__body { border-top-color: rgba(245, 196, 0, 0.35); }
+.door--valkyrie .door__body { border-top-color: rgba(38, 145, 85, 0.35); }
+.door--nevera .door__body { border-top-color: rgba(64, 180, 255, 0.35); }
 
 .door__tag {
   font-family: var(--mono);
@@ -380,6 +389,9 @@ main {
 .door--chiron .door__tag { color: #ffa04d; }
 .door--veyron .door__tag { color: #e6d9b8; }
 .door--mistral .door__tag { color: #55cf85; }
+.door--f499p .door__tag { color: #f0c420; }
+.door--valkyrie .door__tag { color: #3fae74; }
+.door--nevera .door__tag { color: #5ec1ff; }
 
 .door__title {
   font-family: var(--display);
@@ -442,6 +454,9 @@ main {
 .door--chiron .spec b { color: #ffb36e; }
 .door--veyron .spec b { color: #efe6cd; }
 .door--mistral .spec b { color: #7bdd9f; }
+.door--f499p .spec b { color: #f7d45e; }
+.door--valkyrie .spec b { color: #63cb92; }
+.door--nevera .spec b { color: #8ad3ff; }
 
 .door__enter {
   margin-top: 14px;
@@ -469,6 +484,9 @@ main {
 .door--chiron.is-in:hover .door__enter { color: #ff9d40; border-color: #ff9d40; }
 .door--veyron.is-in:hover .door__enter { color: #e9dcba; border-color: #e9dcba; }
 .door--mistral.is-in:hover .door__enter { color: #5fd48d; border-color: #5fd48d; }
+.door--f499p.is-in:hover .door__enter { color: #f2c636; border-color: #f2c636; }
+.door--valkyrie.is-in:hover .door__enter { color: #45bd80; border-color: #45bd80; }
+.door--nevera.is-in:hover .door__enter { color: #66c6ff; border-color: #66c6ff; }
 
 /* ---------- 页脚 ---------- */
 .footer {
